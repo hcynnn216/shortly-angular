@@ -1,7 +1,7 @@
-<div id='container' ng-controller='ShortenController'>
+<div id='shorten' ng-controller='ShortenController'>
   <form>
         <input class='text' type='text' name='url' ng-model='newLink'>
-        <input type='submit' value='Shorten' ng-click='Links.addOne()'>
+        <input type='submit' value='Shorten' ng-click='addLink(newLink)'>
   </form>
   <img class='spinner' src='/spiffygif_46x46.gif'>
   <div class='message'></div>
