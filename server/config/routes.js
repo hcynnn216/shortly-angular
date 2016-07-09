@@ -3,7 +3,10 @@ var userController = require('../users/userController.js');
 var helpers = require('./helpers.js'); // our custom middleware
 
 module.exports = function (app, express) {
-  app.get('/:code', linksController.navToLink);
+  app.get('/', function(req, res) {
+    res.render('index');
+  });
+  app.get('/code/:code', linksController.navToLink);
 
   app.post('/api/users/signin', userController.signin);
   app.post('/api/users/signup', userController.signup);
