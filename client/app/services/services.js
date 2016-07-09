@@ -25,11 +25,14 @@ angular.module('shortly.services', [])
     },
 
     getOne: function(code) {
+
       return $http({
         method: 'GET',
-        url: '/code',
-        params: code
+        url: '/code/' + code,
       })
+      .then(function(resp) {
+        return resp.url;
+      });
       
 
     }
